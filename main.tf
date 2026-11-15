@@ -18,7 +18,7 @@ data "aws_ami" "amazon_linux" {
   owners = ["amazon"]
 filter {
   name = "name" #we are filtering by the name of the AMI
-  values = ["al2023-am-2023.*-x86_64"]
+  values = ["al2023-ami-2023.*-x86_64"]
   }
 }
 #instead of fetching a valid ami id from the
@@ -29,11 +29,10 @@ filter {
 resource "aws_instance" "terraform_test"{
   ami = data.aws_ami.amazon_linux.id
   instance_type = "t2.micro"
-}
-
 #simply tagging what we made to make it easily searchable
-tags{
+tags = {
   Name = "TerraformLearningServer"
+}
 }
 
 /*Overview of file
