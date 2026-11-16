@@ -5,3 +5,5 @@
 2. Adding Security group
     a. If no egress added, Terraform will delete the default outbound rule that AWS usually adds.
     b. Keeping with "DRY" principle, port 8080 can be made into a variable.
+    c. Made a change on github but not locally and had to use "git push -u origin main --force" in
+        to push the local version onto the site.
